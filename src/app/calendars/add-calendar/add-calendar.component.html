@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Créer un nouvel agenda</div>
+    <div class="card-body">
+      <form [formGroup]="newAddCalendarFormGroup" (ngSubmit)="handleSaveCalendar()">
+
+        <div class="mb-3">
+          <label class="form-label">Titre</label>
+          <input type="text" formControlName="summary" class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <input type="text" formControlName="description" class="form-control">
+        </div>
+
+        <button class="btn btn-info">Connexion</button>
+      </form>
+    </div>
+  </div>
+</div>
+
