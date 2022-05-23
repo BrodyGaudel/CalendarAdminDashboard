@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {CalendarService} from "../../services/calendar.service";
+import {CalendarService} from "../../services/calendar/calendar.service";
 import {Router} from "@angular/router";
 import {Calendar} from "../../models/calendar.model";
 

@@ -2,6 +2,7 @@
   <ng-container *ngIf="calendars | async as listCustomers; else failureOrLading">
     <div class="card">
       <div class="card-header">Agendas</div>
+
       <div class="card-body">
         <div *ngIf="searchFormGroup">
           <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCalendars()">
@@ -30,12 +31,18 @@
               </button>
             </td>
             <td>
-              <button (click)="handleCustomerAccounts(c)" class="btn btn-success">
+              <button (click)="handleUpdateCalendar(c)" class="btn btn-info">
+                <i class="bi bi-input-cursor-text"></i>
+              </button>
+            </td>
+            <td>
+              <button (click)="handleDetails(c)" class="btn btn-success">
                 Consulter
               </button>
             </td>
           </tr>
           </tbody>
+
         </table>
       </div>
     </div>

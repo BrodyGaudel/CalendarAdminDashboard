@@ -1,0 +1,45 @@
+<div class="container mt-2">
+  <div class="row">
+      <ng-container *ngIf="acls | async as listCustomers; else failureOrLading">
+        <div class="card">
+          <div class="card-header">Utilisateurs ayant accès à cet agenda</div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Role</th><th>Value</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let a of acls | async">
+                <td>{{a.role}}</td>
+                <td>{{a.scopevalue}}</td>
+                <td>
+                  <button (click)="handleDeleteAcl(a)" class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+                <td>
+                  <button (click)="handleUpdateAcl(a)" class="btn btn-success">
+                    <i class="bi bi-input-cursor-text"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #failureOrLading>
+        <ng-container *ngIf="errorMessage; else loading">
+          <div class="text-danger">
+            {{errorMessage}}
+          </div>
+        </ng-container>
+        <ng-template #loading>
+          Loading .....
+        </ng-template>
+      </ng-template>
+  </div>
+</div>
+

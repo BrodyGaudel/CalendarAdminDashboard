@@ -3,9 +3,9 @@ import {Router} from '@angular/router';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {Observable} from 'rxjs';
-import {User} from "../models/user.model";
-import {Usermodel} from "../models/usermodel.model";
-import {Profile} from "../models/profile.model";
+import {User} from "../../models/user.model";
+import {Usermodel} from "../../models/usermodel.model";
+import {Profile} from "../../models/profile.model";
 
 @Injectable({
   providedIn: 'root'

@@ -7,9 +7,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CalendarComponent } from './calendars/calendar/calendar.component';
 import { LoginComponent } from './securities/login/login.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateCalendarComponent } from './calendars/update-calendar/update-calendar.component';
 import { AddCalendarComponent } from './calendars/add-calendar/add-calendar.component';
+import { DetailsComponent } from './details/details/details.component';
+import { AddAclComponent } from './details/add-acl/add-acl.component';
+import { UpdateAclComponent } from './details/update-acl/update-acl.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { AddCalendarComponent } from './calendars/add-calendar/add-calendar.comp
     CalendarComponent,
     LoginComponent,
     UpdateCalendarComponent,
-    AddCalendarComponent
+    AddCalendarComponent,
+    DetailsComponent,
+    AddAclComponent,
+    UpdateAclComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Calendar} from "../../models/calendar.model";
-import {CalendarService} from "../../services/calendar.service";
+import {CalendarService} from "../../services/calendar/calendar.service";
 import {catchError, Observable, throwError} from "rxjs";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -64,9 +64,16 @@ export class CalendarComponent implements OnInit {
     this.deleteCalendar(c);
   }
 
-  handleCustomerAccounts(calendar: Calendar) {
-    this.router.navigateByUrl("/customer-accounts/");
+  handleDetails(calendar: Calendar) {
+    this.gotoItem(calendar);
+  }
+
+  gotoItem(c: Calendar){
+    this.router.navigate(['/details',c.id]);
   }
 
 
+  handleUpdateCalendar(c: Calendar) {
+    this.router.navigate(['/update-calendar',c.id]);
+  }
 }

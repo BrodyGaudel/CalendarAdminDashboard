@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Modifier les droits d'accès</div>
+    <div class="card-body">
+      <form >
+
+        <div class="mb-3">
+          <label class="form-label">Role</label>
+          <input type="text" [(ngModel)]= "acl.role"
+                 name="role" class="form-control">
+        </div>
+        <button type="submit" (click)="updateAcl()" class="btn btn-info">Enregistrer</button>
+
+      </form>
+    </div>
+  </div>
+</div>
