@@ -2,7 +2,10 @@
   <div class="row">
       <ng-container *ngIf="acls | async as listCustomers; else failureOrLading">
         <div class="card">
-          <div class="card-header">Utilisateurs ayant accès à cet agenda</div>
+          <div class="card-header">Utilisateurs ayant accès à cet agenda
+            <button (click)="gotoAddAcl()" class="btn btn-info">
+              <i class="bi bi-person-plus-fill"></i></button>
+          </div>
           <div class="card-body">
             <table class="table">
               <thead>

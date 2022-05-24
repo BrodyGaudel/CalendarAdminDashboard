@@ -51,16 +51,18 @@ export class CalendarService {
     return this.http.put<Calendar>('http://localhost:8088/calendar/update', calendar, {headers: httpHeaders});
   }
 
-  /*getAllCalendarById(id: string): Observable<Calendar[]>{
-    let jwt = this.authService.getToken();
-    jwt = 'Bearer ' + jwt;
-    const httpHeaders = new HttpHeaders({Authorization: jwt});
-    return this.http.get<Calendar[]>('http://localhost:8088/calendar/return/' + id, {headers: httpHeaders});
-  }*/
   getAllCalendarById(id: string): Observable<Array<Calendar[]>>{
     let jwt = this.authService.getToken();
     jwt = 'Bearer ' + jwt;
     const httpHeaders = new HttpHeaders({Authorization: jwt});
     return this.http.get<Array<Calendar[]>>('http://localhost:8088/calendar/return/' + id, {headers: httpHeaders});
+  }
+
+  loadAllEvents(): Observable<any>{
+    let jwt = this.authService.getToken();
+    jwt = 'Bearer ' + jwt;
+    const httpHeaders = new HttpHeaders({Authorization: jwt});
+    return this.http.get<any>('http://localhost:8088/plan/test' ,{headers: httpHeaders});
+
   }
 }

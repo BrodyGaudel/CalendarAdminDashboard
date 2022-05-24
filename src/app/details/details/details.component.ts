@@ -62,4 +62,8 @@ export class DetailsComponent implements OnInit {
     }
 
   }
+
+  gotoAddAcl() {
+    this.router.navigate(['/add-acl', this.idCalendar]);
+  }
 }

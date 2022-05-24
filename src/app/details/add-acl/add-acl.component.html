@@ -1,1 +1,38 @@
-<p>add-acl works!</p>
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Nouvel Accès</div>
+    <div class="card-body">
+
+      <form>
+
+        <div class="mb-3">
+          <label class="form-label">Type</label>
+          <input type="text" [(ngModel)]= "newAcl.scopetype" name="summary" class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="text" [(ngModel)]= "newAcl.scopevalue" name="description" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Role</label>
+          <article>
+            <select (change)="selectChangeHandler($event)">
+              <option value="reader">Lecture seulement</option>
+              <option value="writer">Ecriture seulement</option>
+              <option value="owner">Tous les droits</option>
+            </select>
+            <p><span>Vous avez choisit: </span><b>{{selectedDay}}</b></p>
+          </article>
+
+        </div>
+
+
+
+        <button type="submit" (click)="addAcl()" class="btn btn-info">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</div>

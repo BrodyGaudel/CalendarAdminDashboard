@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Reinitialiser votre compte</div>
+    <div class="card-body">
+
+      <div class="alert alert-danger" *ngIf="err==1">
+
+        <strong>login ou mot de passe erronés..</strong>
+      </div>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nom Utilisateur</label>
+          <input type="text" [(ngModel)]= "profile.username"
+                 name="username" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">>Nouveau mot de passe</label>
+          <input type="text" [(ngModel)]= "profile.password"
+                 name="password" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Code de verification</label>
+          <input type="text" [(ngModel)]= "profile.codename"
+                 name="password" class="form-control">
+        </div>
+
+        <button type="button" (click)="onClickOn()" class="btn btn-info">Envoyer</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>

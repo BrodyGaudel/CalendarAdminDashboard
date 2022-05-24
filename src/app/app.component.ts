@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from "./services/auth/auth.service";
+import {CalendarService} from "./services/calendar/calendar.service";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,17 @@ export class AppComponent implements OnInit{
   title = 'CalendarAdminDashboard';
 
   constructor(public authService: AuthService,
-              private router: Router) {}
+              private router: Router, private calendarService: CalendarService) {}
 
   ngOnInit() {
     this.authService.loadToken();
-    if (this.authService.getToken()==null ||
-      this.authService.isTokenExpired())
+    let loggedUser = localStorage.getItem('loggedUser');
+    if (this.authService.getToken() == null || this.authService.isTokenExpired()) {
       this.router.navigate(['/login']);
+    }
+    else{
+      this.authService.setLoggedUserFromLocalStorage(loggedUser || '{}');
+    }
 
   }
 
@@ -26,5 +31,9 @@ export class AppComponent implements OnInit{
   }
   onClickOnSearch(): void{
 
+  }
+
+  loadEvents() {
+    this.calendarService.loadAllEvents();
   }
 }

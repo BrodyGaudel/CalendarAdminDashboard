@@ -26,6 +26,7 @@ export class CalendarComponent implements OnInit {
       keyword : this.fb.control("")
     });
     this.listeCalendar();
+    this.calendarService.loadAllEvents();
   }
 
   deleteCalendarFromTab(prod: Calendar) {

@@ -13,6 +13,9 @@ import { AddCalendarComponent } from './calendars/add-calendar/add-calendar.comp
 import { DetailsComponent } from './details/details/details.component';
 import { AddAclComponent } from './details/add-acl/add-acl.component';
 import { UpdateAclComponent } from './details/update-acl/update-acl.component';
+import { PwdComponent } from './users/pwd/pwd.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { ForbiddenComponent } from './securities/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { UpdateAclComponent } from './details/update-acl/update-acl.component';
     AddCalendarComponent,
     DetailsComponent,
     AddAclComponent,
-    UpdateAclComponent
+    UpdateAclComponent,
+    PwdComponent,
+    UpdateUserComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,25 @@
 <div class="container">
   <div class="card col-md-6 offset-3 mt-2">
-    <div class="card-header">Please identify yourself</div>
+    <div class="card-header">Veuillez vous identifier</div>
     <div class="card-body">
+      <div class="alert alert-danger" *ngIf="err==1">
+        <strong>login ou mot de passe erronés..</strong>
+      </div>
       <form [formGroup]="newCustomerFormGroup" (ngSubmit)="handleLogin()">
 
         <div class="mb-3">
-          <label class="form-label">Username</label>
+          <label class="form-label">Email</label>
           <input type="text" formControlName="username" class="form-control">
 
         </div>
 
         <div class="mb-3">
-          <label class="form-label">Password</label>
+          <label class="form-label">Mot de passe</label>
           <input type="password" formControlName="password" class="form-control">
         </div>
 
-        <button class="btn btn-info">Connexion</button>
+        <button class="btn btn-info m-xl-5">Connexion</button>
+        <button class="btn btn-warning m-xl-5" (click)="pwdForget()" type="submit">Mot de passe oublié</button>
       </form>
     </div>
   </div>
