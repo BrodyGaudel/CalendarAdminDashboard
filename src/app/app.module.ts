@@ -16,6 +16,7 @@ import { UpdateAclComponent } from './details/update-acl/update-acl.component';
 import { PwdComponent } from './users/pwd/pwd.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { ForbiddenComponent } from './securities/forbidden/forbidden.component';
+import { LoadComponent } from './load/load/load.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ForbiddenComponent } from './securities/forbidden/forbidden.component';
     UpdateAclComponent,
     PwdComponent,
     UpdateUserComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    LoadComponent
   ],
   imports: [
     BrowserModule,

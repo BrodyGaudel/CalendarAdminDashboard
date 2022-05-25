@@ -11,6 +11,7 @@ import {PwdComponent} from "./users/pwd/pwd.component";
 import {CalendarGuard} from "./calendars/guard/calendar.guard";
 import {AddAclComponent} from "./details/add-acl/add-acl.component";
 import {UpdateUserComponent} from "./users/update-user/update-user.component";
+import {LoadComponent} from "./load/load/load.component";
 
 const routes: Routes = [
   {path: 'calendars', component : CalendarComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'app-forbidden', component: ForbiddenComponent},
   {path: 'update-user', component: UpdateUserComponent},
   {path: 'pwd', component: PwdComponent},
+  {path: 'push', component: LoadComponent},
   { path: '', redirectTo: 'calendars', pathMatch: 'full' }
 ];
 

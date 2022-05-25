@@ -3,6 +3,7 @@ import {Calendar} from "../../models/calendar.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthService} from "../auth/auth.service";
 import {Observable} from "rxjs";
+import {Push} from "../../models/push.model";
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,6 @@ export class CalendarService {
     return this.http.post<Calendar>('http://localhost:8088/calendar/insert', calendar, {headers: httpHeaders});
   }
   deleteCalendar(id: string) {
-    // const url = `${this.apiURL}/${id}`;
     let jwt = this.authService.getToken();
     jwt = 'Bearer ' + jwt;
     const httpHeaders = new HttpHeaders({Authorization: jwt});
@@ -38,7 +38,6 @@ export class CalendarService {
   }
 
   consulterCalendar(id: string): Observable<Calendar> {
-    // const url = `${this.apiURL}/${id}`;
     let jwt = this.authService.getToken();
     jwt = 'Bearer ' + jwt;
     const httpHeaders = new HttpHeaders({Authorization: jwt});
@@ -58,11 +57,18 @@ export class CalendarService {
     return this.http.get<Array<Calendar[]>>('http://localhost:8088/calendar/return/' + id, {headers: httpHeaders});
   }
 
-  loadAllEvents(): Observable<any>{
+  /*loadAllEvents(): Observable<any>{
     let jwt = this.authService.getToken();
     jwt = 'Bearer ' + jwt;
     const httpHeaders = new HttpHeaders({Authorization: jwt});
     return this.http.get<any>('http://localhost:8088/plan/test' ,{headers: httpHeaders});
+
+  }*/
+  loadAll(push: Push): Observable<object>{
+    let jwt = this.authService.getToken();
+    jwt = 'Bearer ' + jwt;
+    const httpHeaders = new HttpHeaders({Authorization: jwt});
+    return this.http.post('http://localhost:8088/plan/load', push, {headers: httpHeaders});
 
   }
 }

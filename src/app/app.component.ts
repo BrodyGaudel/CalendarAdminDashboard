@@ -34,6 +34,6 @@ export class AppComponent implements OnInit{
   }
 
   loadEvents() {
-    this.calendarService.loadAllEvents();
+
   }
 }
