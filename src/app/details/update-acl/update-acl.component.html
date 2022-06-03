@@ -6,9 +6,17 @@
 
         <div class="mb-3">
           <label class="form-label">Role</label>
-          <input type="text" [(ngModel)]= "acl.role"
-                 name="role" class="form-control">
+          <article>
+            <select (change)="selectChangeHandler($event)">
+              <option value="reader">Lecture seulement</option>
+              <option value="writer">Ecriture seulement</option>
+              <option value="owner">Tous les droits</option>
+            </select>
+            <p><span>Vous avez choisit: </span><b>{{selectedDay}}</b></p>
+          </article>
+
         </div>
+
         <button type="submit" (click)="updateAcl()" class="btn btn-info">Enregistrer</button>
 
       </form>

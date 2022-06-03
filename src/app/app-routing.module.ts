@@ -12,6 +12,9 @@ import {CalendarGuard} from "./calendars/guard/calendar.guard";
 import {AddAclComponent} from "./details/add-acl/add-acl.component";
 import {UpdateUserComponent} from "./users/update-user/update-user.component";
 import {LoadComponent} from "./load/load/load.component";
+import {SearchCalendarComponent} from "./calendars/search-calendar/search-calendar.component";
+import {ListUserComponent} from "./users/list-user/list-user.component";
+import {AddUserComponent} from "./users/add-user/add-user.component";
 
 const routes: Routes = [
   {path: 'calendars', component : CalendarComponent},
@@ -25,6 +28,9 @@ const routes: Routes = [
   {path: 'update-user', component: UpdateUserComponent},
   {path: 'pwd', component: PwdComponent},
   {path: 'push', component: LoadComponent},
+  {path: 'search/:id', component: SearchCalendarComponent},
+  {path: 'list-users', component: ListUserComponent},
+  {path: 'add-user', component: AddUserComponent},
   { path: '', redirectTo: 'calendars', pathMatch: 'full' }
 ];
 

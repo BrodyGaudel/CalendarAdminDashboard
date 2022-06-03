@@ -17,6 +17,10 @@ import { PwdComponent } from './users/pwd/pwd.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { ForbiddenComponent } from './securities/forbidden/forbidden.component';
 import { LoadComponent } from './load/load/load.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { ListUserComponent } from './users/list-user/list-user.component';
+import { SearchCalendarComponent } from './calendars/search-calendar/search-calendar.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +36,19 @@ import { LoadComponent } from './load/load/load.component';
     PwdComponent,
     UpdateUserComponent,
     ForbiddenComponent,
-    LoadComponent
+    LoadComponent,
+    AddUserComponent,
+    ListUserComponent,
+    SearchCalendarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatProgressBarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Ajouter un nouvel administrateur</div>
+    <div class="card-body">
+      <form [formGroup]="newAddUserFormGroup" (ngSubmit)="handleSaveUser()">
+
+        <div class="mb-3">
+          <label class="form-label">Nom d'utilisateur</label>
+          <input type="text" formControlName="username" class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mot de passe</label>
+          <input type="text" formControlName="password" class="form-control">
+        </div>
+
+        <button class="btn btn-info">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</div>
+

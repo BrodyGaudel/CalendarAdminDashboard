@@ -13,6 +13,7 @@ export class UpdateAclComponent implements OnInit {
   acl = new Acl();
   idCalendar!: string;
   idAcl!: string;
+  selectedDay = '';
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -35,4 +36,8 @@ export class UpdateAclComponent implements OnInit {
     );
   }
 
+  selectChangeHandler(event: any): void {
+    this.selectedDay = event.target.value;
+    this.acl.role = event.target.value;
+  }
 }

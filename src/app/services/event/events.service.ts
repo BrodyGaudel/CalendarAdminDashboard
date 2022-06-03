@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../auth/auth.service";
 import {Eventmodel} from "../../models/eventmodel.model";
+import {EventFormAdd} from "../../models/event.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class EventsService {
 
   }
 
-  addEvent(event: Eventmodel){
+  addEvent(event: EventFormAdd ){
 
   }
 

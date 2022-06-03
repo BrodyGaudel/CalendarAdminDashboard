@@ -1,9 +1,25 @@
 <div class="container">
   <div class="card col-md-6 offset-3 mt-2">
-    <div class="card-header">Charger les évènemts</div>
+    <div class="card-header">Google Agenda</div>
     <div class="card-body">
       <form>
-        <button (click)="loadEvents()" type="submit" class="btn btn-info">Load</button>
+        <button (click)="loadEvents()" type="submit" class="btn btn-info m-lg-5">
+          <i class="bi bi-cloud-arrow-up-fill"> Emplois du Temps</i>
+        </button>
+
+        <button (click)="refreshEvents()" type="submit" class="btn btn-info">
+          <i class="bi bi-arrow-clockwise">Rafraichir</i>
+        </button>
+
+        <button (click)="loadEventsPFE()" type="submit" class="btn btn-warning m-lg-5">
+          <i class="bi bi-cloud-arrow-up-fill"> Encadrement PFE</i>
+        </button>
+
+
+        <button (click)="refreshPfes()" type="submit" class="btn btn-warning">
+          <i class="bi bi-arrow-clockwise">Rafraichir</i>
+        </button>
+
       </form>
     </div>
   </div>

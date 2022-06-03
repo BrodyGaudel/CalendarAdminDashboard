@@ -10,7 +10,7 @@ import {CalendarService} from "./services/calendar/calendar.service";
 })
 export class AppComponent implements OnInit{
   title = 'CalendarAdminDashboard';
-
+  nom = '';
   constructor(public authService: AuthService,
               private router: Router, private calendarService: CalendarService) {}
 
@@ -29,11 +29,8 @@ export class AppComponent implements OnInit{
   onLogout(): void{
     this.authService.logout();
   }
-  onClickOnSearch(): void{
-
-  }
 
   loadEvents() {
-
+    this.router.navigate(['/search',this.nom]);
   }
 }
