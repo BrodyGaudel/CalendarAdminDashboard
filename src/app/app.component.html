@@ -34,19 +34,19 @@
 
         <li class="nav-item">
           <a *ngIf="authService.isAdmin()" class="nav-link active" routerLink = "/list-users">
-            <i class="bi bi-people-fill"></i>
+            <i class="bi bi-people-fill">Utilisateurs</i>
           </a>
         </li>
 
         <li class="nav-item">
           <a *ngIf="authService.isAdmin()" class="nav-link active" routerLink = "/add-calendar">
-            <i class="bi bi-calendar-plus-fill"></i>
+            <i class="bi bi-calendar-plus-fill">Nouvel Agenda</i>
           </a>
         </li>
 
         <li class="nav-item">
           <a *ngIf="authService.isAdmin()" class="nav-link active" aria-current="page" routerLink = "/push">
-            <i class="bi bi-calendar-range-fill"></i>
+            <i class="bi bi-calendar-range-fill">Chargement</i>
           </a>
         </li>
 
